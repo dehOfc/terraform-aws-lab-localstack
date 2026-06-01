@@ -1,24 +1,25 @@
-## Lab: Infraestrutura como Código (IaC) com Terraform e LocalStack
+# Lab: Infraestrutura como Código (IaC) com Terraform e LocalStack
 
-Este projeto demonstra a criação de uma VPC na AWS utilizando Terraform. Para garantir a segurança e a gratuidade dos testes, utilizei o LocalStack rodando via Docker para simular os serviços da AWS localmente.
+Este é o meu primeiro projeto prático focando em **Infraestrutura como Código (IaC)**. Como estudante de ADS, decidi sair da teoria e criar um ambiente que simulasse o trabalho real de um engenheiro DevOps, usando ferramentas essenciais do mercado.
 
-**Ferramentas utilizadas:**
+## 🎯 O objetivo
+O objetivo deste projeto foi aprender a provisionar recursos de nuvem (AWS) localmente, sem custos, para entender como a infraestrutura é construída e organizada.
 
-* Terraform (IaC)
-* LocalStack (Simulador AWS)
-* Docker / Docker Compose
+## 🛠️ O que eu aprendi na prática
+* **Terraform:** Como declarar infraestrutura em arquivos (`.tf`) em vez de criar tudo manualmente pelo console.
+* **LocalStack + Docker:** Como ter um "servidor AWS" rodando dentro do meu próprio computador para testar minhas configurações.
+* **Organização Profissional:** Aprendi a dividir o código em arquivos menores (`network.tf`, `compute.tf`, `providers.tf`), o que facilita muito a manutenção.
+* **Git e versionamento:** Como subir meu código, tratar conflitos com `git pull --rebase` e manter arquivos sensíveis longe do GitHub usando o `.gitignore`.
 
-**Como rodar:**
-1. Inicie o ambiente: docker compose up
-2. Execute o deploy: terraform apply
+## 🏗️ Arquitetura do ambiente
+* **Rede:** Criei uma VPC com uma sub-rede segmentada e um Security Group para proteger o acesso (firewall).
+* **Computação:** Provisionei uma instância EC2 que já nasce configurada com um servidor web simples através de automação (`user_data`).
 
-## Arquitetura de Rede
-
-Este projeto foi desenhado seguindo boas práticas de isolamento de infraestrutura. A arquitetura atual é composta por:
-
-* **VPC (Virtual Private Cloud):** Utiliza o bloco CIDR `10.0.0.0/16`, fornecendo uma rede privada robusta com capacidade para até 65.536 endereços IP, ideal para escalabilidade interna.
-* **Subnet (Sub-rede):** Implementei uma sub-rede com o bloco CIDR `10.0.1.0/24` dentro da VPC. Esta segmentação é fundamental para o design de redes, permitindo o isolamento de recursos (como instâncias EC2) em uma zona específica (`us-east-1a`).
-
-> **Nota Técnica:** A segmentação em `/24` (256 endereços) foi escolhida para demonstrar o controle sobre o tráfego de rede e o particionamento de sub-redes, seguindo conceitos fundamentais de endereçamento IP e roteamento.
+## 🚀 Próximos passos
+Como iniciante, este foi um grande passo para mim. Pretendo aprimorar esse ambiente com:
+1. Mais segurança nas regras de firewall.
+2. Explorar conceitos de Kubernetes (K8s).
+3. Automatizar a validação desse código (CI/CD).
 
 ---
+*Projeto desenvolvido como parte do meu aprendizado em Cloud e DevOps.*
