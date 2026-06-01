@@ -5,6 +5,10 @@ Este é o meu primeiro projeto prático focando em **Infraestrutura como Código
 ## 🎯 O objetivo
 O objetivo deste projeto foi aprender a provisionar recursos de nuvem (AWS) localmente, sem custos, para entender como a infraestrutura é construída e organizada.
 
+## 💡 Por que este projeto?
+Como entusiasta de Cloud Computing e certificado **Oracle Cloud Infrastructure (OCI) Associate**, decidi construir este laboratório na AWS para ampliar meu domínio sobre o ecossistema líder de mercado. 
+Acredito que, ao entender os conceitos de rede e infraestrutura na AWS, consigo aplicar esse conhecimento em qualquer outra nuvem, como na OCI.
+
 ## 🛠️ O que eu aprendi na prática
 * **Terraform:** Como declarar infraestrutura em arquivos (`.tf`) em vez de criar tudo manualmente pelo console.
 * **LocalStack + Docker:** Como ter um "servidor AWS" rodando dentro do meu próprio computador para testar minhas configurações.
